@@ -1,8 +1,8 @@
 #!/bin/bash
 
 S_REGISTRY="gcr.io/spinnaker-marketplace"
-T_REGISTRY="registry.cn-beijing.aliyuncs.com/spinnaker-cd"
-NODES="node01.zy.com node02.zy.com"
+T_REGISTRY="registry.cn-hangzhou.aliyuncs.com/pingjianga/spinnaker-cd"
+NODES="GitLab"
 
 ## 下载镜像
 function GetImages(){
