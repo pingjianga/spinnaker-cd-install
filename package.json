@@ -1,0 +1,25 @@
+{
+  "name": "spinnaker",
+  "version": "1.0.0",
+  "description": "![Spinnaker Pre Install](https://github.com/zeyangli/spinnaker-cd-install/workflows/Spinnaker%20Pre%20Install/badge.svg?branch=master)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pingjianga/spinnaker-cd-install.git"
+  },
+  "keywords": [
+    "d2657c5e185f46404bed5909c00dcdfcc171572e"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pingjianga/spinnaker-cd-install/issues"
+  },
+  "homepage": "https://pingjianga.github.io/spinnaker-cd-install"
+}
