@@ -2,7 +2,7 @@
 
 name: Spinnaker Pre Install
 env:
-  SPINNAKER_VERSION: 1.24.4
+  SPINNAKER_VERSION: 1.23.6
   REGISTRY_URL: "gcr.io/spinnaker-marketplace/"
   NEW_REGISTRY_URL: "registry.cn-hangzhou.aliyuncs.com/pingjianga/spinnaker-cd"
   TAG_FILE: "tagfile.txt"
@@ -28,7 +28,7 @@ jobs:
         hal -v    
     
     ## 
-    - name: 02- 获取spinnaker版本文件
+    - name: 02-获取spinnaker版本文件
       run: |  
         hal version list
         hal version bom ${SPINNAKER_VERSION} -q -o yaml >${SPINNAKER_VERSION}.yml
@@ -55,7 +55,7 @@ jobs:
         done
 
     ## 收集镜像tag文件和下载镜像的脚本
-    - name: 04- 收集镜像tag文件和下载镜像的脚本
+    - name: 04-收集镜像tag文件和下载镜像的脚本
       run : |
         mkdir -p artifacts/${SPINNAKER_VERSION}
         mv ${TAG_FILE} artifacts/${SPINNAKER_VERSION}/
