@@ -5,7 +5,7 @@ env:
   SPINNAKER_VERSION: 1.23.6
   REGISTRY_URL: "gcr.io/spinnaker-marketplace/"
   NEW_REGISTRY_URL: "registry.cn-hangzhou.aliyuncs.com/pingjianga/spinnaker-cd"
-  NEW_REGISTRY_URL2: "jiangpinga/spinnakercd"
+  NEW_REGISTRY_URL2: "docker.io/jiangpinga"
   TAG_FILE: "tagfile.txt"
   BOM_DIR: ".boms"
 
@@ -20,20 +20,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       
-    ##
-#     - name: 01-安装Halyard部署工具
-#       run: |
-#         chmod +x ./InstallHalyard.sh
-#         ls 
-#         sleep 2
-#         sudo bash -x InstallHalyard.sh --user runner -y
-#         sleep 5
-#         hal -v    
-#     ## 
     - name: 01-使用Halyard获取bom版本文件
       run: |
-        docker pull registry.cn-beijing.aliyuncs.com/spinnaker-cd/halyard:1.32.0
-        docker run -itd -p 8084:8084 -p 9000:9000 --name halyard  registry.cn-beijing.aliyuncs.com/spinnaker-cd/halyard:1.32.0
+        docker pull registry.cn-hangzhou.aliyuncs.com/pingjianga/spinnaker-cd/halyard:1.32.0
+        docker run -itd -p 8084:8084 -p 9000:9000 --name halyard  registry.cn-hangzhou.aliyuncs.com/pingjianga/spinnaker-cd/halyard:1.32.0
         sleep 5
         docker ps | grep halyard 
         chmod +x getbom.sh
