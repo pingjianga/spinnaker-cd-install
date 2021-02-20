@@ -5,7 +5,7 @@ env:
   SPINNAKER_VERSION: 1.23.6
   REGISTRY_URL: "gcr.io/spinnaker-marketplace/"
   NEW_REGISTRY_URL: "registry.cn-hangzhou.aliyuncs.com/pingjianga/spinnaker-cd"
-  NEW_REGISTRY_URL2: "docker.io/spinnakercd/"
+  NEW_REGISTRY_URL2: "jiangpinga/spinnakercd"
   TAG_FILE: "tagfile.txt"
   BOM_DIR: ".boms"
 
