@@ -1,7 +1,7 @@
 #!/bin/bash
 
 S_REGISTRY="gcr.io/spinnaker-marketplace"
-T_REGISTRY="docker.io/jiangpinga"
+T_REGISTRY="jiangpinga/"
 NODES="GitLab"
 
 ## 下载镜像

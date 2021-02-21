@@ -2,14 +2,14 @@
 
 VERSION="SPIN_VERSION"
 S_REGISTRY="gcr.io/spinnaker-marketplace"
-T_REGISTRY="registry.cn-beijing.aliyuncs.com/spinnaker-cd"
+T_REGISTRY="registry.cn-hangzhou.aliyuncs.com/pingjianga/spinnaker-cd"
 BOMS_DIR="/root/.hal/"
 BOMS_FILR=".boms"
 KUBE_DIR="/root/.kube/"
 HALY_IMAGE="gcr.io/spinnaker-marketplace/halyard:1.32.0"
 DECK_HOST="spinnaker.idevops.site"
 GATE_HOST="spin-gate.idevops.site"
-NODES="node01.zy.com node02.zy.com"
+NODES="GitLab"
 
 ## 下载镜像
 function GetImages(){
