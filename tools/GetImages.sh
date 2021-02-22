@@ -2,7 +2,7 @@
 
 S_REGISTRY="gcr.io/spinnaker-marketplace"
 T_REGISTRY="jiangpinga/"
-NODES="GitLab"
+NODES="47.92.229.64"
 
 ## 下载镜像
 function GetImages(){

@@ -9,7 +9,7 @@ KUBE_DIR="/root/.kube/"
 HALY_IMAGE="gcr.io/spinnaker-marketplace/halyard:1.32.0"
 DECK_HOST="spinnaker.idevops.site"
 GATE_HOST="spin-gate.idevops.site"
-NODES="GitLab"
+NODES="47.92.229.64"
 
 ## 下载镜像
 function GetImages(){
