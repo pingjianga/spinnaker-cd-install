@@ -2,7 +2,7 @@
 
 VERSION="SPIN_VERSION"
 S_REGISTRY="gcr.io/spinnaker-marketplace"
-T_REGISTRY="registry.cn-hangzhou.aliyuncs.com/pingjianga/spinnaker-cd"
+T_REGISTRY="registry.cn-hangzhou.aliyuncs.com/pingjianga"
 BOMS_DIR="/root/.hal/"
 BOMS_FILR=".boms"
 KUBE_DIR="/root/.kube/"
@@ -29,8 +29,8 @@ function GetImages(){
     for node in ${NODES}
     do
        echo -e "\033[43;34m =====${node}===镜像信息===== \033[0m"
-       ssh ${node} "docker pull registry.cn-beijing.aliyuncs.com/spinnaker-cd/redis-cluster:v2 "
-       ssh ${node} "docker tag registry.cn-beijing.aliyuncs.com/spinnaker-cd/redis-cluster:v2 gcr.io/kubernetes-spinnaker/redis-cluster:v2"
+       ssh ${node} "docker pull registry.cn-hangzhou.aliyuncs.com/pingjianga/redis-cluster:v2 "
+       ssh ${node} "docker tag registry.cn-hangzhou.aliyuncs.com/pingjianga/redis-cluster:v2 gcr.io/kubernetes-spinnaker/redis-cluster:v2"
        ssh ${node} "docker images | grep 'spinnaker-marketplace' "
     done
 
