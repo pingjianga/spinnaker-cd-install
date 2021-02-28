@@ -22,13 +22,12 @@ jobs:
       
     - name: 01-使用Halyard获取bom版本文件
       run: |
-        docker pull gcr.io/spinnaker-marketplace/halyard:nightly-ubuntu
-
+        docker pull gcr.io/spinnaker-marketplace/front50:0.26.1-20201106170304-ubuntu
     - name: 02-2同步aliyun
       run: |
         docker login -u ${{ secrets.DOCKER_USER}} -p ${{ secrets.DOCKER_PASSWD}} ${NEW_REGISTRY_URL}
-        docker tag gcr.io/spinnaker-marketplace/halyard:nightly-ubuntu registry.cn-hangzhou.aliyuncs.com/pingjianga/halyard:nightly-ubuntu
-        docker push registry.cn-hangzhou.aliyuncs.com/pingjianga/halyard:nightly-ubuntu
+        docker tag gcr.io/spinnaker-marketplace/front50:0.26.1-20201106170304-ubuntu registry.cn-hangzhou.aliyuncs.com/pingjianga/front50:0.26.1-20201106170304
+        docker push registry.cn-hangzhou.aliyuncs.com/pingjianga/front50:0.26.1-20201106170304
 
     - name: 01-运行Halyard
       run: |
