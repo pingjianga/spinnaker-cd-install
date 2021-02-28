@@ -24,14 +24,20 @@ jobs:
       run: |
         docker pull gcr.io/spinnaker-marketplace/halyard:nightly-ubuntu
 
+    - name: 02-1同步dockerhub
+      run: |
         docker login -u ${{ secrets.DOCKER_USER}} -p ${{ secrets.DOCKER_PASSWD}} ${NEW_REGISTRY_URL}
         docker tag gcr.io/spinnaker-marketplace/halyard:nightly-ubuntu jiangpinga/halyard:1.41.1
         docker push jiangpinga/halyard:1.41.1
-        sleep 170
+
+    - name: 02-2同步aliyun
+      run: |
         docker login -u ${{ secrets.DOCKER_USER}} -p ${{ secrets.DOCKER_PASSWD}} ${NEW_REGISTRY_URL}
         docker tag gcr.io/spinnaker-marketplace/halyard:nightly-ubuntu registry.cn-hangzhou.aliyuncs.com/pingjianga/halyard:nightly-ubuntu
         docker push registry.cn-hangzhou.aliyuncs.com/pingjianga/halyard:nightly-ubuntu
-        sleep 1000
+
+    - name: 01-运行Halyard
+      run: |
         docker run -itd -p 8084:8084 -p 9000:9000 --name halyard gcr.io/spinnaker-marketplace/halyard:nightly-ubuntu
         sleep 5
         docker ps | grep halyard 
