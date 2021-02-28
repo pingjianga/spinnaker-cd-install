@@ -22,8 +22,8 @@ jobs:
       
     - name: 01-使用Halyard获取bom版本文件
       run: |
-        docker pull registry.cn-hangzhou.aliyuncs.com/pingjianga/halyard:1.41.1
-        docker run -itd -p 8084:8084 -p 9000:9000 --name halyard  registry.cn-hangzhou.aliyuncs.com/pingjianga/halyard:1.41.1
+        docker pull gcr.io/spinnaker-marketplace/halyard:nightly-ubuntu
+        docker run -itd -p 8084:8084 -p 9000:9000 --name halyard gcr.io/spinnaker-marketplace/halyard:nightly-ubuntu
         sleep 5
         docker ps | grep halyard 
         chmod +x getbom.sh
