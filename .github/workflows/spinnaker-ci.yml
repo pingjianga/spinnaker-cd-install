@@ -24,12 +24,6 @@ jobs:
       run: |
         docker pull gcr.io/spinnaker-marketplace/halyard:nightly-ubuntu
 
-    - name: 02-1同步dockerhub
-      run: |
-        docker login -u ${{ secrets.DOCKER_USER}} -p ${{ secrets.DOCKER_PASSWD}} ${NEW_REGISTRY_URL}
-        docker tag gcr.io/spinnaker-marketplace/halyard:nightly-ubuntu jiangpinga/halyard:1.41.1
-        docker push jiangpinga/halyard:1.41.1
-
     - name: 02-2同步aliyun
       run: |
         docker login -u ${{ secrets.DOCKER_USER}} -p ${{ secrets.DOCKER_PASSWD}} ${NEW_REGISTRY_URL}
